@@ -1,0 +1,10 @@
+@import './generic/reset';
+
+//import tools
+@import './tools/mixins';
+
+.c-greeting{
+  &__text{
+    color: #4D4D4D;
+  }
+}

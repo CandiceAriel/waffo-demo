@@ -9,20 +9,36 @@ function Home() {
   const lang = locationState ? locationState.lang : '';
 
   const [language, setLanguage] = useState('');
+  // const [dependencies, setDependencies] = useState('')
 
+  //set language state
   useEffect(() => {
-    setLanguage(lang)
+    const initDep = () => {
+      setLanguage(lang)
+    }
 
+    initDep()
+  },[ lang ]);
+
+  //set language in render
+  useEffect(() => {
     const changeLang = (language) => {
       i18n.changeLanguage(language)
     };
 
     changeLang(language)
-  },[i18n,lang, language]);
+  },[
+    i18n,
+    language
+  ]);
 
   return (
-    <div className="o-home o-home-wrapper">
-      <h1>{t('hello')}</h1>
+    <div className="c-home o-home-wrapper">
+      <h1 className="c-home__text">{t('hello')}</h1>
+      <div className="c-home__section-about">
+        <span className="c-home__text">{t('about')}</span>
+      </div>
+      
     </div>
   );
 }

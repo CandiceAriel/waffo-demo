@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {useLocation} from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -8,17 +8,20 @@ function Home() {
   const locationState = location.state;
   const lang = locationState ? locationState.lang : '';
 
-  useEffect(() => {
-    setLang(lang)
-    console.log(lang)
-  });
+  const [language, setLanguage] = useState('');
 
-  const setLang = (l) => {
-    i18n.changeLanguage(l)
-  };
+  useEffect(() => {
+    setLanguage(lang)
+
+    const changeLang = (language) => {
+      i18n.changeLanguage(language)
+    };
+
+    changeLang(language)
+  },[i18n,lang, language]);
 
   return (
-    <div className="o-home">
+    <div className="o-home o-home-wrapper">
       <h1>{t('hello')}</h1>
     </div>
   );

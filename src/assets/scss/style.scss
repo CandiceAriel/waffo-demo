@@ -3,8 +3,9 @@
 //import tools
 @import './tools/mixins';
 
-.c-greeting{
-  &__text{
-    color: #4D4D4D;
-  }
-}
+//import components
+@import './components/buttons';
+@import './components/header';
+
+//import objects
+@import './object/wrapper'

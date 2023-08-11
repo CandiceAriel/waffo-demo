@@ -18,7 +18,7 @@ function Header() {
       {/* <button onClick={() => {setLang("en");}}>English</button>
       <button onClick={() => {setLang("chi");}}>中文</button> */}
       {Object.keys(lngs).map((lng) => (
-        <button key={lng} onClick={() => changeLang(lng)}>
+        <button className='c-button c-button-secondary' key={lng} onClick={() => changeLang(lng)}>
           {lngs[lng].nativeName}
         </button>
       ))}

@@ -25,6 +25,8 @@ i18n
     fallbackLng: 'en',
     debug: true,
     whitelist: langs,
+    ns: ["translations"],
+    defaultNS: "translations",
     
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
